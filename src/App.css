@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700&family=Unbounded:wght@500;700&display=swap");
+
+:root {
+  --bg: #edf2f3;
+  --ink: #10272f;
+  --sea: #1f7a8c;
+  --deep: #0f4c5c;
+  --sun: #f2b134;
+  --line: #cbd8db;
+  --card: #ffffff;
+  --mute: #5b7078;
+  --dream: #7c6bc4;
+  --planned: #1f7a8c;
+  --visited: #3e9b5f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Onest", system-ui, sans-serif;
+  line-height: 1.5;
+}
+button { font: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 2px;
+}
+
+/* ── Типографика ── */
+.display { font-family: "Unbounded", "Onest", sans-serif; font-weight: 700; margin: 0; }
+h1.display { font-size: 2rem; line-height: 1.2; }
+.h2 { font-size: 1.25rem; }
+.h3 { font-size: 1rem; }
+.muted { color: var(--mute); }
+.small { font-size: 0.875rem; }
+.lead { max-width: 36rem; margin: 0; }
+.big { font-family: "Unbounded", sans-serif; font-weight: 700; font-size: 1.8rem; }
+.strong { font-weight: 600; }
+.ok { color: var(--visited); }
+.bad { color: #c0392b; }
+
+/* ── Шапка ── */
+.topbar { background: var(--ink); }
+.topbar-inner {
+  max-width: 56rem; margin: 0 auto; padding: 0.75rem 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem;
+}
+.logo { color: var(--sun); font-size: 1.1rem; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.topbar nav button {
+  background: transparent; color: #c9d7db; border: 0;
+  padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+}
+.topbar nav button.active { background: var(--sun); color: var(--ink); }
+
+/* ── Раскладка ── */
+.main { max-width: 56rem; margin: 0 auto; padding: 2rem 1rem; }
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+.row { display: flex; align-items: center; gap: 0.75rem; }
+.row.wrap { flex-wrap: wrap; }
+.row.between { justify-content: space-between; }
+.grow { flex: 1; min-width: 8rem; }
+.grid { display: grid; gap: 1rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 640px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  h1.display { font-size: 1.5rem; }
+}
+
+/* ── Карточки ── */
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1rem;
+}
+.card-btn { width: 100%; text-align: left; color: inherit; display: block; }
+.card-btn .bar { margin-top: 0.5rem; }
+.flag { font-size: 2.25rem; line-height: 1; }
+.big-flag { font-size: 3rem; }
+
+/* Билет-карточка направления */
+.ticket {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; overflow: hidden;
+}
+.ticket-head {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 1rem; background: var(--deep); color: #fff;
+}
+.ticket-body {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  padding: 1rem; border-top: 2px dashed var(--line);
+}
+
+/* ── Прогресс ── */
+.bar { width: 100%; height: 8px; border-radius: 999px; background: var(--line); }
+.bar-fill {
+  height: 100%; border-radius: 999px; background: var(--sun);
+  transition: width 0.3s;
+}
+.bar-fill.sea { background: var(--sea); }
+.bar-fill.s-dream { background: var(--dream); }
+.bar-fill.s-planned { background: var(--planned); }
+.bar-fill.s-visited { background: var(--visited); }
+
+/* ── Кнопки и бейджи ── */
+.btn {
+  background: var(--deep); color: #fff; border: 1.5px solid var(--deep);
+  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem; font-weight: 600;
+}
+.btn-ghost { background: transparent; color: var(--deep); }
+.link { background: none; border: 0; padding: 0; color: var(--sea); font-weight: 600; align-self: flex-start; }
+.x { background: none; border: 0; color: var(--mute); font-size: 1rem; }
+.badge {
+  border: 0; color: #fff; padding: 0.25rem 0.6rem;
+  border-radius: 999px; font-size: 0.75rem; font-weight: 600;
+}
+.badge.s-dream { background: var(--dream); }
+.badge.s-planned { background: var(--planned); }
+.badge.s-visited { background: var(--visited); }
+
+/* ── Поля ввода ── */
+input, select, textarea {
+  font: inherit; font-size: 0.875rem; color: var(--ink);
+  padding: 0.5rem 0.75rem; border-radius: 8px;
+  border: 1.5px solid var(--line); background: #fff;
+}
+textarea { width: 100%; border-radius: 12px; }
+.num { width: 6rem; }
+.num.wide { width: 7rem; }
+.emoji-input { width: 4rem; text-align: center; }
+
+/* ── Вкладки ── */
+.tabs { display: flex; gap: 0.25rem; overflow-x: auto; border-bottom: 2px solid var(--line); }
+.tab {
+  background: none; border: 0; border-bottom: 3px solid transparent;
+  margin-bottom: -2px; padding: 0.5rem 1rem; white-space: nowrap;
+  font-size: 0.875rem; font-weight: 600; color: var(--mute);
+}
+.tab.active { color: var(--deep); border-bottom-color: var(--sun); }
+
+/* ── Чек-лист ── */
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li { display: flex; align-items: center; gap: 0.75rem; padding: 0.25rem 0; }
+.checklist input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: var(--sea); padding: 0; }
+.checklist .done { text-decoration: line-through; color: var(--mute); }
+
+/* ── Итог бюджета ── */
+.total { padding-top: 0.5rem; border-top: 2px dashed var(--line); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-fill { transition: none; }
+}
